@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="camp.bso.inf.myapplication.ScoreBoard">
+
+    <TextView
+        android:id="@+id/textpersib"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Persib Bandung"
+        android:textSize="20pt" />
+
+    <TextView
+        android:id="@+id/textvs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="VS"
+        android:textSize="18pt" />
+
+    <TextView
+        android:id="@+id/textpersija"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginBottom="10dp"
+        android:text="Persija Jakarta"
+        android:textSize="20pt" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rellayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#1500ff">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="0.33"
+                android:text="0"
+                android:textSize="20pt" />
+
+            <Button
+                android:id="@+id/pluspersib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text1"
+                android:text="+"
+                android:textSize="15pt" />
+
+            <Button
+                android:id="@+id/minuspersib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text1"
+                android:layout_toRightOf="@+id/pluspersib"
+                android:text="-"
+                android:textSize="15pt" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.33"
+            android:gravity="center_horizontal"
+            android:text="-"
+
+            android:textSize="20pt" />
+
+        <RelativeLayout
+            android:id="@+id/rellayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffae00">
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="0.33"
+                android:text="0"
+                android:textSize="20pt" />
+
+            <Button
+                android:id="@+id/pluspersija"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text3"
+                android:text="+"
+                android:textSize="15pt" />
+
+            <Button
+                android:id="@+id/minuspersija"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text3"
+                android:layout_toRightOf="@id/pluspersija"
+                android:text="-"
+                android:textSize="15pt" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Reset"
+            android:textSize="15pt" />
+
+        <Button
+            android:id="@+id/berita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Berita"
+            android:textSize="15pt" />
+
+        <Button
+            android:id="@+id/map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Map"
+            android:textSize="15pt" />
+    </LinearLayout>
+</LinearLayout>
