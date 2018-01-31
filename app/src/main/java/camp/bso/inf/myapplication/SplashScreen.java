@@ -8,13 +8,14 @@ import android.os.Bundle;
 
 public class SplashScreen extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 1000;
+    private static int SPLASH_TIME_OUT = 5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        //Menghilangkan action bar, supaya jadi full screen
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -29,7 +30,7 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-                Intent i = new Intent(SplashScreen.this, ScoreBoard.class);
+                Intent i = new Intent(SplashScreen.this, ListPertandingan.class);
                 startActivity(i);
 
                 // close this activity
