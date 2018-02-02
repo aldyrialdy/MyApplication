@@ -14,12 +14,19 @@ import java.util.LinkedList;
  */
 
 public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordViewHolder> {
-    private final LinkedList<String> mWordList;
+//    private final LinkedList<String> mWordListHome;
+//    private final LinkedList<String> mWordListAway;
+
+    Context mContext;
+    TeamListOpenHelper mDB;
     private LayoutInflater mInflater;
 
-    public WordListAdapter(Context context, LinkedList<String> wordList) {
+    public WordListAdapter(Context context, TeamListOpenHelper db) {
         mInflater = LayoutInflater.from(context);
-        this.mWordList = wordList;
+        mContext = context;
+        mDB = db;
+//        this.mWordListHome = wordList1;
+//        this.mWordListAway = wordList2;
     }
 
     @Override
@@ -30,40 +37,49 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
 
     @Override
     public void onBindViewHolder(WordViewHolder holder, int position) {
-        String mCurrent = mWordList.get(position);
-        holder.wordItemView.setText(mCurrent);
+            ItemTeam current = mDB.query(position);
+            holder.wordItemView1.setText(current.getTeamHome());
+            holder.wordItemView2.setText(current.getTeamAway());
+
+//        String mCurrent1 = mWordListHome.get(position);
+//        String mCurrent2 = mWordListAway.get(position);
+//        holder.wordItemView1.setText(mCurrent1);
+//        holder.wordItemView2.setText(mCurrent2);
     }
 
     @Override
     public int getItemCount() {
-        return mWordList.size();
+        return (int) mDB.count();
     }
 
     public class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public final TextView wordItemView;
+        public final TextView wordItemView1;
+        public final TextView wordItemView2;
+
         final WordListAdapter mAdapter;
 
         public WordViewHolder(View itemView, WordListAdapter adapter) {
             super(itemView);
-            wordItemView = (TextView) itemView.findViewById(R.id.word);
+            wordItemView1 = (TextView) itemView.findViewById(R.id.word1);
+            wordItemView2 = (TextView) itemView.findViewById(R.id.word2);
             this.mAdapter = adapter;
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            //	Get	the	position	of	the	item	that	was	clicked.
-            int mPosition = getLayoutPosition();
-
-            //	Use	that	to	access	the	affected	item	in	mWordList.
-            String element = mWordList.get(mPosition);
-
-            //	Change	the	word	in	the	mWordList.
-            mWordList.set(mPosition, "Clicked!	" + element);
-
-            //	Notify	the	adapter,	that	the	data	has	changed	so	it	can
-            //	update	the	RecyclerView	to	display	the	data.
-            mAdapter.notifyDataSetChanged();
+//            //	Get	the	position	of	the	item	that	was	clicked.
+//            int mPosition = getLayoutPosition();
+//
+//            //	Use	that	to	access	the	affected	item	in	mWordList.
+//            String element = mWordListHome.get(mPosition);
+//
+//            //	Change	the	word	in	the	mWordList.
+//            mWordListHome.set(mPosition, "Clicked!	" + element);
+//
+//            //	Notify	the	adapter,	that	the	data	has	changed	so	it	can
+//            //	update	the	RecyclerView	to	display	the	data.
+//            mAdapter.notifyDataSetChanged();
         }
     }
 

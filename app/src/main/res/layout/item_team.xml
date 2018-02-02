@@ -2,10 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="6dp">
+
     <TextView
-        android:id="@+id/word"
-        style="@style/tanding_title" />
+        android:id="@+id/wordhome"
+        android:layout_width="wrap_content"
+        style="@style/tanding_title"
+        android:text="H-"/>
+    <TextView
+        android:id="@+id/word1"
+        android:layout_weight="0.5"
+        style="@style/tanding_title"
+        android:text="Team 1"/>
+    <TextView
+        android:id="@+id/vs"
+        android:layout_weight="0.5"
+        style="@style/tanding_title"
+        android:gravity="center_horizontal"
+        android:text="VS"/>
+    <TextView
+        android:id="@+id/word2"
+        android:layout_weight="0.5"
+        style="@style/tanding_title"
+        android:gravity="right"
+        android:text="Team 2"/>
+    <TextView
+        android:id="@+id/wordaway"
+        android:layout_width="wrap_content"
+        style="@style/tanding_title"
+        android:text="-A"/>
 
 </LinearLayout>
